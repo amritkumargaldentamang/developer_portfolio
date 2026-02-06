@@ -1,0 +1,50 @@
+/* Reset & fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #222;
+  color: #fff;
+}
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+    display: block;
+  }
+}
