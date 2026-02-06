@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Amrit Tamang</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -12,19 +14,211 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
     </nav>
   </header>
 
-  <main style="padding: 40px; max-width: 800px; margin: auto;">
-    <h2>About Me</h2>
-    <img src="assets/images/profile.jpg" alt="Amrit Tamang" style="width:150px; border-radius: 50%; margin: 20px 0;">
-    <p>Hello! I’m Amrit Kumar Tamang, a passionate graphic designer based in Nepal. I specialize in branding, logo design, and digital creatives.</p>
-    <p>I believe design is about solving problems visually, and I love helping businesses communicate their identity through clean, modern design.</p>
-    <p>I use tools like Figma, Photoshop, Illustrator, and InDesign to bring ideas to life. I'm currently studying IT and blending creativity with tech to explore new frontiers.</p>
-  </main>
+  <!-- About Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-content fade-in-down">
+      <img src="assets/images/profile.jpg" alt="Amrit Tamang" class="about-profile-img">
+      <h2>About Me</h2>
+      <p class="about-intro">A passionate graphic designer blending creativity with technology to craft visually compelling stories.</p>
+    </div>
+  </section>
+
+  <!-- About Story Section -->
+  <section class="about-story fade-in-up">
+    <div class="story-container">
+      <div class="story-content">
+        <h3>Who I Am</h3>
+        <p>Hello! I'm Amrit Kumar Tamang, a passionate graphic designer based in Nepal. I specialize in branding, logo design, and digital creatives that leave lasting impressions.</p>
+        <p>I believe design is about solving problems visually. Every project is an opportunity to help businesses communicate their identity through clean, modern, and meaningful design.</p>
+        <p>Currently pursuing IT studies, I'm blending creativity with technology to explore innovative design solutions and stay ahead in the digital landscape.</p>
+      </div>
+      <div class="story-highlights">
+        <div class="highlight-box fade-in-left animation-delay-1">
+          <span class="highlight-number">5+</span>
+          <span class="highlight-text">Years Experience</span>
+        </div>
+        <div class="highlight-box fade-in-left animation-delay-2">
+          <span class="highlight-number">100+</span>
+          <span class="highlight-text">Projects Completed</span>
+        </div>
+        <div class="highlight-box fade-in-left animation-delay-3">
+          <span class="highlight-number">50+</span>
+          <span class="highlight-text">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h3>My Skills</h3>
+    <div class="skills-container">
+      <div class="skill-category fade-in-up animation-delay-1">
+        <h4>Design</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Logo Design</span>
+          <span class="skill-tag">Branding</span>
+          <span class="skill-tag">UI/UX Design</span>
+          <span class="skill-tag">Print Design</span>
+        </div>
+      </div>
+      <div class="skill-category fade-in-up animation-delay-2">
+        <h4>Software</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Illustrator</span>
+          <span class="skill-tag">InDesign</span>
+        </div>
+      </div>
+      <div class="skill-category fade-in-up animation-delay-3">
+        <h4>Other Skills</h4>
+        <div class="skill-list">
+          <span class="skill-tag">Web Design</span>
+          <span class="skill-tag">Social Media</span>
+          <span class="skill-tag">Packaging</span>
+          <span class="skill-tag">Illustration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline Section -->
+  <section class="experience-section">
+    <h3>Experience & Journey</h3>
+    <div class="timeline">
+      <div class="timeline-item fade-in-left animation-delay-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Senior Graphic Designer</h4>
+          <p class="timeline-year">2023 - Present</p>
+          <p>Leading design projects, mentoring junior designers, and developing brand strategies for clients across various industries.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in-left animation-delay-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Graphic Designer</h4>
+          <p class="timeline-year">2020 - 2023</p>
+          <p>Created designs for branding, packaging, print media, and digital platforms for diverse clientele ranging from startups to established businesses.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in-left animation-delay-3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Design Enthusiast</h4>
+          <p class="timeline-year">2018 - 2020</p>
+          <p>Started freelancing, learning design tools, and building a portfolio while exploring different design disciplines and styles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="tools-section fade-in-up">
+    <h3>Tools & Technologies</h3>
+    <div class="tools-grid">
+      <div class="tool-card animation-delay-1">
+        <div class="tool-icon">🎨</div>
+        <h4>Figma</h4>
+        <p>Modern UI/UX design and prototyping</p>
+      </div>
+      <div class="tool-card animation-delay-2">
+        <div class="tool-icon">📸</div>
+        <h4>Photoshop</h4>
+        <p>Image editing and manipulation</p>
+      </div>
+      <div class="tool-card animation-delay-3">
+        <div class="tool-icon">🖌️</div>
+        <h4>Illustrator</h4>
+        <p>Vector graphics and illustrations</p>
+      </div>
+      <div class="tool-card animation-delay-4">
+        <div class="tool-icon">📰</div>
+        <h4>InDesign</h4>
+        <p>Print and publication design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content fade-in-down">
+      <h2>Let's Create Something Amazing</h2>
+      <p>Ready to bring your vision to life? Let's collaborate and create designs that make an impact.</p>
+      <a href="contact.html" class="cta-button">Get In Touch</a>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Amrit Tamang. All rights reserved.</p>
+    <p>© 2026 Amrit Tamang. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://instagram.com" class="social-link" title="Instagram">📷</a>
+      <a href="https://linkedin.com" class="social-link" title="LinkedIn">💼</a>
+      <a href="https://behance.net" class="social-link" title="Behance">🎨</a>
+      <a href="https://dribbble.com" class="social-link" title="Dribbble">🎯</a>
+      <a href="mailto:hello@example.com" class="social-link" title="Email">✉️</a>
+    </div>
   </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function initTheme() {
+      const stored = localStorage.getItem('theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+        updateToggleButton(stored);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = prefersDark ? 'dark' : 'light';
+        html.setAttribute('data-theme', theme);
+        updateToggleButton(theme);
+      }
+    }
+
+    function updateToggleButton(theme) {
+      if (theme === 'dark') {
+        themeToggle.textContent = '☀️ Light';
+      } else {
+        themeToggle.textContent = '🌙 Dark';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') || 'light';
+      const newTheme = current === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleButton(newTheme);
+    });
+
+    initTheme();
+
+    // Scroll Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = entry.target.getAttribute('data-animation') || 'fadeInUp 0.8s ease-out forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[class*="fade-in"]').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
