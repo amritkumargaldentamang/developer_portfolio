@@ -1,10 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact - Amrit Tamang</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session - Amrit Tamang | Graphic Designer</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .contact-header h2 {
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .form-container {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 4px 12px var(--shadow);
+      margin-bottom: 40px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .error {
+      color: #ff6b6b;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .error.show {
+      display: block;
+    }
+
+    .submit-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .submit-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(255,107,107,0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    #successMessage {
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
+    #successMessage.show {
+      display: block;
+    }
+
+    #preview {
+      background: var(--bg-secondary);
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    #preview h3 {
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    #preview p {
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    #preview strong {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        margin: 40px auto;
+      }
+
+      .contact-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .form-container {
+        padding: 25px;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Amrit Tamang</h1>
@@ -12,21 +179,255 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
     </nav>
   </header>
 
-  <main style="padding: 40px; max-width: 800px; margin: auto;">
-    <h2>Contact Me</h2>
-    <p>You can reach me at:</p>
-    <ul>
-      <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-      <li>Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></li>
-    </ul>
-  </main>
+  <div class="contact-container">
+    <div class="contact-header fade-in-down">
+      <h2>Book a Design Session</h2>
+      <p>Let's discuss your project and create something amazing together!</p>
+    </div>
 
-  <footer>
-    <p>© 2025 Amrit Tamang. All rights reserved.</p>
-  </footer>
+    <div class="form-container fade-in-up">
+      <div id="successMessage">✓ Thank you! I'll contact you soon to confirm your session.</div>
+
+      <form id="bookingForm">
+        <div class="input-group">
+          <label for="nameInput">Full Name *</label>
+          <input type="text" id="nameInput" placeholder="Your full name" required>
+          <div id="nameError" class="error"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="emailInput">Email Address *</label>
+          <input type="email" id="emailInput" placeholder="your.email@example.com" required>
+          <div id="emailError" class="error"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="phoneInput">Phone Number</label>
+          <input type="tel" id="phoneInput" placeholder="+1 (123) 456-7890">
+          <div id="phoneError" class="error"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="serviceInput">Service Interested In *</label>
+          <select id="serviceInput" required>
+            <option value="">Select a service</option>
+            <option value="Logo & Branding">Logo & Branding</option>
+            <option value="Social Media Design">Social Media Design</option>
+            <option value="Packaging Design">Packaging Design</option>
+            <option value="Print Design">Print Design</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Illustration">Illustration</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="serviceError" class="error"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="messageInput">Project Details *</label>
+          <textarea id="messageInput" placeholder="Tell me about your project and what you're looking to achieve..." required></textarea>
+          <div id="messageError" class="error"></div>
+        </div>
+
+        <button type="submit" class="submit-btn">Book Your Session</button>
+      </form>
+
+      <div id="preview">
+        <h3>Live Preview</h3>
+        <p><strong>Name:</strong> <span id="pName">---</span></p>
+        <p><strong>Email:</strong> <span id="pEmail">---</span></p>
+        <p><strong>Service:</strong> <span id="pService">---</span></p>
+        <p><strong>Message:</strong> <span id="pMessage">---</span></p>
+      </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--card-border);">
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">📷</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">💼</a>
+        <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="social-link" title="Behance">🎨</a>
+        <a href="https://www.dribbble.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Dribbble">🎯</a>
+        <a href="mailto:your-email@example.com" class="social-link" title="Email">✉️</a>
+      </div>
+      <p>© 2025 Amrit Tamang. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+
+    function initializeTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      let preferredTheme = 'light';
+
+      if (savedTheme) {
+        preferredTheme = savedTheme;
+      } else {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          preferredTheme = 'dark';
+        }
+      }
+
+      applyTheme(preferredTheme);
+    }
+
+    function applyTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+
+      if (theme === 'dark') {
+        themeToggle.textContent = '☀️ Light';
+      } else {
+        themeToggle.textContent = '🌙 Dark';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
+    });
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    }
+
+    initializeTheme();
+
+    // Form Handling
+    const form = document.getElementById('bookingForm');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const phoneInput = document.getElementById('phoneInput');
+    const serviceInput = document.getElementById('serviceInput');
+    const messageInput = document.getElementById('messageInput');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const serviceError = document.getElementById('serviceError');
+    const messageError = document.getElementById('messageError');
+
+    const pName = document.getElementById('pName');
+    const pEmail = document.getElementById('pEmail');
+    const pService = document.getElementById('pService');
+    const pMessage = document.getElementById('pMessage');
+
+    const successMessage = document.getElementById('successMessage');
+
+    // Live preview
+    nameInput.addEventListener('input', () => {
+      pName.textContent = nameInput.value || '---';
+    });
+
+    emailInput.addEventListener('input', () => {
+      pEmail.textContent = emailInput.value || '---';
+    });
+
+    serviceInput.addEventListener('change', () => {
+      pService.textContent = serviceInput.value || '---';
+    });
+
+    messageInput.addEventListener('input', () => {
+      const preview = messageInput.value.substring(0, 50);
+      pMessage.textContent = preview ? preview + (messageInput.value.length > 50 ? '...' : '') : '---';
+    });
+
+    // Form validation and submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Reset errors
+      nameError.classList.remove('show');
+      emailError.classList.remove('show');
+      phoneError.classList.remove('show');
+      serviceError.classList.remove('show');
+      messageError.classList.remove('show');
+
+      let valid = true;
+
+      // Name validation
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required';
+        nameError.classList.add('show');
+        valid = false;
+      }
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email';
+        emailError.classList.add('show');
+        valid = false;
+      }
+
+      // Phone validation (optional but if filled, must be valid)
+      if (phoneInput.value && phoneInput.value.length < 10) {
+        phoneError.textContent = 'Please enter a valid phone number';
+        phoneError.classList.add('show');
+        valid = false;
+      }
+
+      // Service validation
+      if (serviceInput.value === '') {
+        serviceError.textContent = 'Please select a service';
+        serviceError.classList.add('show');
+        valid = false;
+      }
+
+      // Message validation
+      if (messageInput.value.trim() === '') {
+        messageError.textContent = 'Please tell us about your project';
+        messageError.classList.add('show');
+        valid = false;
+      }
+
+      if (valid) {
+        // Show success message
+        successMessage.classList.add('show');
+        form.style.display = 'none';
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          form.reset();
+          form.style.display = 'block';
+          successMessage.classList.remove('show');
+          pName.textContent = '---';
+          pEmail.textContent = '---';
+          pService.textContent = '---';
+          pMessage.textContent = '---';
+        }, 3000);
+      }
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.animation = getComputedStyle(entry.target).animation;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-down, .fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>

@@ -6,287 +6,6 @@
   <title>Amrit Tamang | Graphic Designer</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-primary: #fefefe;
-      --bg-secondary: #f8f8f8;
-      --bg-tertiary: #f0f0f0;
-      --text-primary: #333;
-      --text-secondary: #666;
-      --card-bg: #fff;
-      --card-border: #e0e0e0;
-      --header-bg: #222;
-      --header-text: #fff;
-      --accent: #ff6b6b;
-      --accent-hover: #ff5252;
-      --shadow: rgba(0,0,0,0.08);
-      --shadow-hover: rgba(0,0,0,0.15);
-    }
-
-    html[data-theme="dark"] {
-      --bg-primary: #1a1a1a;
-      --bg-secondary: #252525;
-      --bg-tertiary: #2d2d2d;
-      --text-primary: #e0e0e0;
-      --text-secondary: #b0b0b0;
-      --card-bg: #2a2a2a;
-      --card-border: #404040;
-      --header-bg: #111;
-      --header-text: #e0e0e0;
-      --accent: #ff6b6b;
-      --accent-hover: #ff5252;
-      --shadow: rgba(0,0,0,0.3);
-      --shadow-hover: rgba(0,0,0,0.5);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      line-height: 1.6; 
-      color: var(--text-primary); 
-      background: var(--bg-primary);
-      background-image: 
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.015) 2px, rgba(0,0,0,.015) 4px),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.015) 2px, rgba(0,0,0,.015) 4px);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    header { 
-      background: var(--header-bg); 
-      color: var(--header-text); 
-      padding: 20px 40px; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      box-shadow: 0 2px 10px var(--shadow); 
-      transition: background-color 0.3s ease;
-    }
-    
-    nav { display: flex; align-items: center; gap: 20px; }
-    
-    nav a { 
-      color: var(--header-text); 
-      margin-left: 20px; 
-      text-decoration: none; 
-      font-weight: 600; 
-      transition: color 0.3s ease; 
-    }
-    
-    nav a:hover { color: var(--accent); }
-    
-    .theme-toggle { 
-      background: var(--accent); 
-      border: none; 
-      color: #fff; 
-      padding: 8px 14px; 
-      border-radius: 6px; 
-      cursor: pointer; 
-      font-weight: 600; 
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-      margin-left: 20px;
-    }
-    
-    .theme-toggle:hover { 
-      background: var(--accent-hover); 
-      transform: scale(1.05);
-    }
-    
-    .hero { 
-      padding: 120px 40px; 
-      text-align: center; 
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-      transition: background 0.3s ease;
-    }
-    
-    .hero h2 { 
-      font-size: 3rem; 
-      margin-bottom: 15px; 
-      color: var(--text-primary); 
-      font-weight: 700; 
-    }
-    
-    .hero p { 
-      font-size: 1.1rem; 
-      color: var(--text-secondary); 
-      margin-bottom: 30px; 
-    }
-    
-    .portfolio { 
-      padding: 60px 40px; 
-      background: var(--bg-primary);
-      transition: background-color 0.3s ease;
-    }
-    
-    .portfolio h3 { 
-      font-size: 2.5rem; 
-      margin-bottom: 40px; 
-      text-align: center; 
-      color: var(--text-primary); 
-      font-weight: 700; 
-    }
-    
-    .projects-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 30px; 
-    }
-    
-    .project-card { 
-      background: var(--card-bg); 
-      border: 1px solid var(--card-border); 
-      border-radius: 12px; 
-      overflow: hidden; 
-      box-shadow: 0 4px 12px var(--shadow); 
-      transition: all 0.3s ease; 
-      cursor: pointer; 
-    }
-    
-    .project-card:hover { 
-      transform: translateY(-8px); 
-      box-shadow: 0 12px 24px var(--shadow-hover); 
-    }
-    
-    .project-card img { 
-      width: 100%; 
-      height: 250px; 
-      object-fit: cover; 
-      display: block; 
-      transition: transform 0.3s ease; 
-    }
-    
-    .project-card:hover img { transform: scale(1.05); }
-    
-    .project-card .content { 
-      padding: 25px; 
-      transition: background-color 0.3s ease;
-    }
-    
-    .project-card h4 { 
-      margin-bottom: 12px; 
-      font-size: 1.3rem; 
-      color: var(--text-primary); 
-      font-weight: 600; 
-    }
-    
-    .project-card p { 
-      font-size: 0.95rem; 
-      color: var(--text-secondary); 
-      margin-bottom: 18px; 
-    }
-    
-    .btn-view { 
-      background: var(--accent); 
-      color: #fff; 
-      border: none; 
-      padding: 10px 20px; 
-      border-radius: 6px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: all 0.3s ease; 
-      font-family: 'Poppins', sans-serif; 
-      font-size: 0.95rem; 
-    }
-    
-    .btn-view:hover { 
-      background: var(--accent-hover); 
-      transform: scale(1.05); 
-      box-shadow: 0 4px 12px rgba(255,107,107,0.3); 
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 30px 20px; 
-      background: var(--header-bg); 
-      color: var(--text-secondary); 
-      margin-top: 40px;
-      transition: background-color 0.3s ease;
-    }
-    
-    @media (max-width: 768px) {
-      header { flex-direction: column; text-align: center; padding: 15px 20px; gap: 15px; }
-      nav { flex-direction: column; align-items: center; gap: 10px; }
-      nav a { margin: 0; }
-      .theme-toggle { margin-left: 0; }
-      .hero { padding: 80px 20px; }
-      .hero h2 { font-size: 2rem; }
-      .portfolio { padding: 40px 20px; }
-      .projects-grid { gap: 20px; }
-      .project-card img { height: 200px; }
-    }
-
-    /* Scroll Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .fade-in-up {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .fade-in-down {
-      opacity: 0;
-      animation: fadeInDown 0.8s ease-out forwards;
-    }
-
-    .fade-in-left {
-      opacity: 0;
-      animation: fadeInLeft 0.8s ease-out forwards;
-    }
-
-    .fade-in-right {
-      opacity: 0;
-      animation: fadeInRight 0.8s ease-out forwards;
-    }
-
-    .animation-delay-1 { animation-delay: 0.1s; }
-    .animation-delay-2 { animation-delay: 0.2s; }
-    .animation-delay-3 { animation-delay: 0.3s; }
-    .animation-delay-4 { animation-delay: 0.4s; }
-  </style>
 </head>
 <body>
   <header>
@@ -303,6 +22,31 @@
   <section class="hero fade-in-down">
     <h2>Graphic Designer</h2>
     <p>Crafting bold, creative visuals that speak volumes.</p>
+  </section>
+
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item fade-in-up animation-delay-1">
+        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-label">Projects Completed</div>
+        <div class="stat-description">Diverse portfolio</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-2">
+        <div class="stat-number" data-target="45">0</div>
+        <div class="stat-label">Happy Clients</div>
+        <div class="stat-description">Trusted partnerships</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-3">
+        <div class="stat-number" data-target="8">0</div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-description">Industry expertise</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-4">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">% Satisfaction</div>
+        <div class="stat-description">Client ratings</div>
+      </div>
+    </div>
   </section>
 
   <section id="portfolio" class="portfolio">
@@ -327,7 +71,58 @@
     </div>
   </section>
 
+  <section class="services-section">
+    <h2 class="fade-in-up">My Services</h2>
+    <div class="services-grid">
+      <div class="service-card fade-in-left animation-delay-1">
+        <span class="service-icon">🎨</span>
+        <h3>Logo & Branding</h3>
+        <p>Creating memorable brand identities with unique, timeless logos and comprehensive brand guidelines.</p>
+      </div>
+      <div class="service-card fade-in-up animation-delay-2">
+        <span class="service-icon">📱</span>
+        <h3>Social Media Design</h3>
+        <p>Eye-catching graphics and templates for Instagram, Facebook, and other social media platforms.</p>
+      </div>
+      <div class="service-card fade-in-right animation-delay-3">
+        <span class="service-icon">📦</span>
+        <h3>Packaging Design</h3>
+        <p>Product packaging that stands out on shelves and communicates your brand message effectively.</p>
+      </div>
+      <div class="service-card fade-in-left animation-delay-1">
+        <span class="service-icon">🖨️</span>
+        <h3>Print Design</h3>
+        <p>Professional brochures, flyers, business cards, and other printed materials with stunning designs.</p>
+      </div>
+      <div class="service-card fade-in-up animation-delay-2">
+        <span class="service-icon">🌐</span>
+        <h3>Web Design</h3>
+        <p>Beautiful and functional web designs that create engaging user experiences and drive results.</p>
+      </div>
+      <div class="service-card fade-in-right animation-delay-3">
+        <span class="service-icon">✨</span>
+        <h3>Illustration</h3>
+        <p>Custom illustrations and artwork that add personality and unique character to your projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section fade-in-up">
+    <div class="cta-content">
+      <h2>Ready to bring your vision to life?</h2>
+      <p>Let's collaborate on your next project and create something amazing together. Get in touch today!</p>
+      <a href="contact.html" class="cta-button">Start Your Project</a>
+    </div>
+  </section>
+
   <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">📷</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">💼</a>
+      <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="social-link" title="Behance">🎨</a>
+      <a href="https://www.dribbble.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Dribbble">🎯</a>
+      <a href="mailto:your-email@example.com" class="social-link" title="Email">✉️</a>
+    </div>
     <p>© 2025 Amrit Tamang. All rights reserved.</p>
   </footer>
 
@@ -343,6 +138,12 @@
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
           entry.target.style.animation = getComputedStyle(entry.target).animation;
+          
+          // Animate numbers if this is a stat number
+          if (entry.target.classList.contains('stat-number')) {
+            animateNumber(entry.target);
+          }
+          
           observer.unobserve(entry.target);
         }
       });
@@ -352,6 +153,30 @@
     document.querySelectorAll('.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right').forEach(el => {
       observer.observe(el);
     });
+
+    // Animate number counter
+    function animateNumber(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const start = 0;
+      const startTime = Date.now();
+
+      function update() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.floor(start + (target - start) * progress);
+        
+        element.textContent = current;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = target;
+        }
+      }
+
+      update();
+    }
 
     // Initialize theme switch
     const themeToggle = document.getElementById('themeToggle');
