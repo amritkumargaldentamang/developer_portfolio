@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Amrit Tamang</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Amrit Tamang</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+    </nav>
+  </header>
+
+  <!-- Portfolio Hero Section -->
+  <section class="portfolio-hero">
+    <div class="portfolio-hero-content fade-in-down">
+      <h2>My Work</h2>
+      <p>A curated collection of design projects that showcase creativity, strategy, and attention to detail.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Filter Section -->
+  <section class="portfolio-filters fade-in-up">
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="packaging">Packaging</button>
+      <button class="filter-btn" data-filter="print">Print</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="illustration">Illustration</button>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio-grid-section">
+    <div class="portfolio-grid">
+      <!-- Project 1 -->
+      <div class="portfolio-item fade-in-up animation-delay-1" data-category="branding">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project1.jpg" alt="Modern Brand Identity">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Modern Brand Identity</h3>
+                <p>Comprehensive branding for tech startup</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Branding</span>
+            <p>2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="portfolio-item fade-in-up animation-delay-2" data-category="packaging">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project2.jpg" alt="Sustainable Packaging Design">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Sustainable Packaging</h3>
+                <p>Eco-friendly packaging for organic products</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Packaging</span>
+            <p>2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="portfolio-item fade-in-up animation-delay-3" data-category="web">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project3.jpg" alt="Web Design">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>E-Commerce Platform</h3>
+                <p>Modern UI/UX for online retail</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Web</span>
+            <p>2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="portfolio-item fade-in-up animation-delay-4" data-category="print">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project4.jpg" alt="Print Design">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Annual Report Design</h3>
+                <p>Corporate annual report and collateral</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Print</span>
+            <p>2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="portfolio-item fade-in-up animation-delay-1" data-category="illustration">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project5.jpg" alt="Illustration Series">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Character Illustrations</h3>
+                <p>Custom character design and illustrations</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Illustration</span>
+            <p>2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="portfolio-item fade-in-up animation-delay-2" data-category="branding">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project6.jpg" alt="Logo Design">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Restaurant Branding</h3>
+                <p>Complete visual identity for F&B business</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Branding</span>
+            <p>2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="portfolio-item fade-in-up animation-delay-3" data-category="web">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project7.jpg" alt="Web Design">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Portfolio Website</h3>
+                <p>Designer portfolio with showcase</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Web</span>
+            <p>2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="portfolio-item fade-in-up animation-delay-4" data-category="packaging">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project8.jpg" alt="Packaging">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Cosmetics Packaging</h3>
+                <p>Luxury beauty product packaging</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Packaging</span>
+            <p>2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="portfolio-item fade-in-up animation-delay-1" data-category="print">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="assets/images/project9.jpg" alt="Print">
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>Magazine Design</h3>
+                <p>Editorial design and layout</p>
+                <a href="#" class="view-project">View Project →</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Print</span>
+            <p>2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="portfolio-stats">
+    <div class="stats-container">
+      <div class="stat-item fade-in-up animation-delay-1">
+        <div class="stat-number" data-target="250">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-2">
+        <div class="stat-number" data-target="85">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-3">
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+      <div class="stat-item fade-in-up animation-delay-4">
+        <div class="stat-number" data-target="8">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content fade-in-down">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let's collaborate and bring your vision to life with creative, impactful design.</p>
+      <a href="contact.html" class="cta-button">Get In Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Amrit Tamang. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://instagram.com" class="social-link" title="Instagram">📷</a>
+      <a href="https://linkedin.com" class="social-link" title="LinkedIn">💼</a>
+      <a href="https://behance.net" class="social-link" title="Behance">🎨</a>
+      <a href="https://dribbble.com" class="social-link" title="Dribbble">🎯</a>
+      <a href="mailto:hello@example.com" class="social-link" title="Email">✉️</a>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function initTheme() {
+      const stored = localStorage.getItem('theme');
+      if (stored) {
+        html.setAttribute('data-theme', stored);
+        updateToggleButton(stored);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = prefersDark ? 'dark' : 'light';
+        html.setAttribute('data-theme', theme);
+        updateToggleButton(theme);
+      }
+    }
+
+    function updateToggleButton(theme) {
+      if (theme === 'dark') {
+        themeToggle.textContent = '☀️ Light';
+      } else {
+        themeToggle.textContent = '🌙 Dark';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') || 'light';
+      const newTheme = current === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleButton(newTheme);
+    });
+
+    initTheme();
+
+    // Portfolio Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+            }, 10);
+          } else {
+            item.style.opacity = '0';
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Scroll Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = entry.target.getAttribute('data-animation') || 'fadeInUp 0.8s ease-out forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[class*="fade-in"]').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter Animation
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.getAttribute('data-target'));
+          let count = 0;
+          const increment = target / 50;
+          const timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+              entry.target.textContent = target;
+              clearInterval(timer);
+            } else {
+              entry.target.textContent = Math.floor(count);
+            }
+          }, 30);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => counterObserver.observe(stat));
+  </script>
+</body>
+</html>
