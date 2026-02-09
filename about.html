@@ -165,60 +165,6 @@
     </div>
   </footer>
 
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-    function initTheme() {
-      const stored = localStorage.getItem('theme');
-      if (stored) {
-        html.setAttribute('data-theme', stored);
-        updateToggleButton(stored);
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = prefersDark ? 'dark' : 'light';
-        html.setAttribute('data-theme', theme);
-        updateToggleButton(theme);
-      }
-    }
-
-    function updateToggleButton(theme) {
-      if (theme === 'dark') {
-        themeToggle.textContent = '☀️ Light';
-      } else {
-        themeToggle.textContent = '🌙 Dark';
-      }
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme') || 'light';
-      const newTheme = current === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateToggleButton(newTheme);
-    });
-
-    initTheme();
-
-    // Scroll Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = entry.target.getAttribute('data-animation') || 'fadeInUp 0.8s ease-out forwards';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('[class*="fade-in"]').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -53,7 +53,7 @@
     <h3 class="fade-in-up">My Work</h3>
     <div class="projects-grid">
       <div class="project-card fade-in-left animation-delay-1">
-        <img src="assets/images/project1.jpg" alt="Project 1">
+        <img src="https://picsum.photos/id/1011/1200/800" alt="Project 1">
         <div class="content">
           <h4>Logo Design - Coffee Vibe</h4>
           <p>A bold, modern logo for a local coffee startup that captures warmth and energy.</p>
@@ -61,7 +61,7 @@
         </div>
       </div>
       <div class="project-card fade-in-right animation-delay-2">
-        <img src="assets/images/project2.jpg" alt="Project 2">
+        <img src="https://picsum.photos/id/1025/1200/800" alt="Project 2">
         <div class="content">
           <h4>Media Banners</h4>
           <p>High-impact visuals for Instagram and Facebook ad campaigns for a fashion brand.</p>
@@ -126,109 +126,6 @@
     <p>© 2025 Amrit Tamang. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Scroll Animation with Intersection Observer
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.animation = getComputedStyle(entry.target).animation;
-          
-          // Animate numbers if this is a stat number
-          if (entry.target.classList.contains('stat-number')) {
-            animateNumber(entry.target);
-          }
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe all animated elements
-    document.querySelectorAll('.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Animate number counter
-    function animateNumber(element) {
-      const target = parseInt(element.getAttribute('data-target'));
-      const duration = 2000; // 2 seconds
-      const start = 0;
-      const startTime = Date.now();
-
-      function update() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const current = Math.floor(start + (target - start) * progress);
-        
-        element.textContent = current;
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          element.textContent = target;
-        }
-      }
-
-      update();
-    }
-
-    // Initialize theme switch
-    const themeToggle = document.getElementById('themeToggle');
-    const htmlElement = document.documentElement;
-    
-    // Check for saved theme preference or default to system preference
-    function initializeTheme() {
-      const savedTheme = localStorage.getItem('theme');
-      let preferredTheme = 'light';
-      
-      if (savedTheme) {
-        preferredTheme = savedTheme;
-      } else {
-        // Check system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          preferredTheme = 'dark';
-        }
-      }
-      
-      applyTheme(preferredTheme);
-    }
-    
-    // Apply theme
-    function applyTheme(theme) {
-      htmlElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      
-      if (theme === 'dark') {
-        themeToggle.textContent = '☀️ Light';
-      } else {
-        themeToggle.textContent = '🌙 Dark';
-      }
-    }
-    
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      applyTheme(newTheme);
-    });
-    
-    // Listen for system theme changes
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-    }
-    
-    // Initialize on page load
-    initializeTheme();
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

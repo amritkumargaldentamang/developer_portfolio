@@ -86,7 +86,7 @@
       <div class="portfolio-item fade-in-up animation-delay-3" data-category="web">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project3.jpg" alt="Web Design">
+              <img src="https://picsum.photos/id/1013/1200/800" alt="Web Design">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>E-Commerce Platform</h3>
@@ -106,7 +106,7 @@
       <div class="portfolio-item fade-in-up animation-delay-4" data-category="print">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project4.jpg" alt="Print Design">
+              <img src="https://picsum.photos/id/1014/1200/800" alt="Print Design">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Annual Report Design</h3>
@@ -126,7 +126,7 @@
       <div class="portfolio-item fade-in-up animation-delay-1" data-category="illustration">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project5.jpg" alt="Illustration Series">
+              <img src="https://picsum.photos/id/1015/1200/800" alt="Illustration Series">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Character Illustrations</h3>
@@ -146,7 +146,7 @@
       <div class="portfolio-item fade-in-up animation-delay-2" data-category="branding">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project6.jpg" alt="Logo Design">
+              <img src="https://picsum.photos/id/1016/1200/800" alt="Logo Design">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Restaurant Branding</h3>
@@ -166,7 +166,7 @@
       <div class="portfolio-item fade-in-up animation-delay-3" data-category="web">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project7.jpg" alt="Web Design">
+              <img src="https://picsum.photos/id/1017/1200/800" alt="Web Design">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Portfolio Website</h3>
@@ -186,7 +186,7 @@
       <div class="portfolio-item fade-in-up animation-delay-4" data-category="packaging">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project8.jpg" alt="Packaging">
+              <img src="https://picsum.photos/id/1018/1200/800" alt="Packaging">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Cosmetics Packaging</h3>
@@ -206,7 +206,7 @@
       <div class="portfolio-item fade-in-up animation-delay-1" data-category="print">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="assets/images/project9.jpg" alt="Print">
+              <img src="https://picsum.photos/id/1019/1200/800" alt="Print">
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <h3>Magazine Design</h3>
@@ -266,109 +266,6 @@
     </div>
   </footer>
 
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-    function initTheme() {
-      const stored = localStorage.getItem('theme');
-      if (stored) {
-        html.setAttribute('data-theme', stored);
-        updateToggleButton(stored);
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = prefersDark ? 'dark' : 'light';
-        html.setAttribute('data-theme', theme);
-        updateToggleButton(theme);
-      }
-    }
-
-    function updateToggleButton(theme) {
-      if (theme === 'dark') {
-        themeToggle.textContent = '☀️ Light';
-      } else {
-        themeToggle.textContent = '🌙 Dark';
-      }
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme') || 'light';
-      const newTheme = current === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateToggleButton(newTheme);
-    });
-
-    initTheme();
-
-    // Portfolio Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        portfolioItems.forEach(item => {
-          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-            item.style.display = 'block';
-            setTimeout(() => {
-              item.style.opacity = '1';
-            }, 10);
-          } else {
-            item.style.opacity = '0';
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Scroll Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = entry.target.getAttribute('data-animation') || 'fadeInUp 0.8s ease-out forwards';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('[class*="fade-in"]').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Counter Animation
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const counterObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = parseInt(entry.target.getAttribute('data-target'));
-          let count = 0;
-          const increment = target / 50;
-          const timer = setInterval(() => {
-            count += increment;
-            if (count >= target) {
-              entry.target.textContent = target;
-              clearInterval(timer);
-            } else {
-              entry.target.textContent = Math.floor(count);
-            }
-          }, 30);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    statNumbers.forEach(stat => counterObserver.observe(stat));
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
