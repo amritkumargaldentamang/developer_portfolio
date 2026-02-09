@@ -11,6 +11,8 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     .contact-container {
@@ -200,7 +202,7 @@
     </div>
 
     <div class="form-container fade-in-up" role="region" aria-labelledby="contact-form-heading">
-    <div id="successMessage">✓ Thank you! I'll contact you soon to confirm your session.</div>
+    <div id="successMessage" role="status" aria-live="polite">✓ Thank you! I'll contact you soon to confirm your session.</div>
 
       <form id="bookingForm" aria-label="Booking form">
         <div class="input-group">
@@ -268,6 +270,6 @@
 
   </main>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

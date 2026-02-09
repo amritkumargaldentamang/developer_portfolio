@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amrit Tamang | Graphic Designer</title>
+  <title>Amrit Tamang |  Backend Developer</title>
   <meta name="description" content="Amrit Tamang — graphic designer crafting bold visuals: branding, packaging, print, and web design.">
   <meta property="og:title" content="Amrit Tamang | Graphic Designer">
   <meta property="og:description" content="Crafting bold, creative visuals for brands and products.">
@@ -11,6 +11,8 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,8 +32,8 @@
   <main id="main" role="main">
 
   <section class="hero fade-in-down" role="region" aria-labelledby="hero-heading">
-    <h2>Graphic Designer</h2>
-    <p>Crafting bold, creative visuals that speak volumes.</p>
+    <h2>Backend Developer</h2>
+    <p>Crafting robust, scalable backend solutions that drive applications.</p>
   </section>
 
   <section class="stats-section">
@@ -62,22 +64,28 @@
   <section id="portfolio" class="portfolio">
     <h3 id="portfolio-heading" class="fade-in-up">My Work</h3>
     <div class="projects-grid">
-      <div class="project-card fade-in-left animation-delay-1">
-        <img src="https://picsum.photos/id/1011/1200/800" alt="Project 1">
+      <article class="project-card fade-in-left animation-delay-1">
+        <figure>
+          <img src="https://picsum.photos/id/1011/1200/800" alt="Logo Design - Coffee Vibe" width="1200" height="800" loading="lazy">
+          <figcaption class="visually-hidden">Logo Design - Coffee Vibe</figcaption>
+        </figure>
         <div class="content">
           <h4>Logo Design - Coffee Vibe</h4>
           <p>A bold, modern logo for a local coffee startup that captures warmth and energy.</p>
           <button class="btn-view">View Project</button>
         </div>
-      </div>
-      <div class="project-card fade-in-right animation-delay-2">
-        <img src="https://picsum.photos/id/1025/1200/800" alt="Project 2">
+      </article>
+      <article class="project-card fade-in-right animation-delay-2">
+        <figure>
+          <img src="https://picsum.photos/id/1025/1200/800" alt="Media banners for fashion brand" width="1200" height="800" loading="lazy">
+          <figcaption class="visually-hidden">Media banners for fashion brand</figcaption>
+        </figure>
         <div class="content">
           <h4>Media Banners</h4>
           <p>High-impact visuals for Instagram and Facebook ad campaigns for a fashion brand.</p>
           <button class="btn-view">View Project</button>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -138,6 +146,6 @@
     <p>© 2025 Amrit Tamang. All rights reserved.</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
