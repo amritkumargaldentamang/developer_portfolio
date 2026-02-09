@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book a Session - Amrit Tamang | Graphic Designer</title>
+  <meta name="description" content="Book a design session with Amrit Tamang — branding, packaging, social and web design services.">
+  <meta property="og:title" content="Book a Session — Amrit Tamang">
+  <meta property="og:description" content="Schedule a design session to discuss your project and creative needs.">
+  <meta property="og:image" content="https://picsum.photos/id/1011/1200/800">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -173,15 +179,19 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <header>
     <h1>Amrit Tamang</h1>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">🌙 Dark</button>
     </nav>
   </header>
+
+  <main id="main" role="main">
 
   <div class="contact-container">
     <div class="contact-header fade-in-down">
@@ -189,20 +199,20 @@
       <p>Let's discuss your project and create something amazing together!</p>
     </div>
 
-    <div class="form-container fade-in-up">
-      <div id="successMessage">✓ Thank you! I'll contact you soon to confirm your session.</div>
+    <div class="form-container fade-in-up" role="region" aria-labelledby="contact-form-heading">
+    <div id="successMessage">✓ Thank you! I'll contact you soon to confirm your session.</div>
 
-      <form id="bookingForm">
+      <form id="bookingForm" aria-label="Booking form">
         <div class="input-group">
           <label for="nameInput">Full Name *</label>
-          <input type="text" id="nameInput" placeholder="Your full name" required>
-          <div id="nameError" class="error"></div>
+          <input type="text" id="nameInput" placeholder="Your full name" required aria-required="true">
+          <div id="nameError" class="error" aria-live="polite"></div>
         </div>
 
         <div class="input-group">
           <label for="emailInput">Email Address *</label>
-          <input type="email" id="emailInput" placeholder="your.email@example.com" required>
-          <div id="emailError" class="error"></div>
+          <input type="email" id="emailInput" placeholder="your.email@example.com" required aria-required="true">
+          <div id="emailError" class="error" aria-live="polite"></div>
         </div>
 
         <div class="input-group">
@@ -213,7 +223,7 @@
 
         <div class="input-group">
           <label for="serviceInput">Service Interested In *</label>
-          <select id="serviceInput" required>
+          <select id="serviceInput" required aria-required="true">
             <option value="">Select a service</option>
             <option value="Logo & Branding">Logo & Branding</option>
             <option value="Social Media Design">Social Media Design</option>
@@ -228,8 +238,8 @@
 
         <div class="input-group">
           <label for="messageInput">Project Details *</label>
-          <textarea id="messageInput" placeholder="Tell me about your project and what you're looking to achieve..." required></textarea>
-          <div id="messageError" class="error"></div>
+          <textarea id="messageInput" placeholder="Tell me about your project and what you're looking to achieve..." required aria-required="true"></textarea>
+          <div id="messageError" class="error" aria-live="polite"></div>
         </div>
 
         <button type="submit" class="submit-btn">Book Your Session</button>
@@ -255,6 +265,8 @@
       <p>© 2025 Amrit Tamang. All rights reserved.</p>
     </footer>
   </div>
+
+  </main>
 
   <script src="js/main.js"></script>
 </body>

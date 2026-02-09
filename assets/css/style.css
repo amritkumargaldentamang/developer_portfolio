@@ -53,6 +53,26 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Skip link (keyboard users) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus,
+.skip-link:active {
+  left: 16px;
+  outline: 3px solid rgba(255,255,255,0.15);
+}
+
 /* Header & Navigation */
 header {
   background: var(--header-bg);
@@ -100,6 +120,54 @@ nav a:hover {
 .theme-toggle:hover {
   background: var(--accent-hover);
   transform: scale(1.05);
+}
+
+/* Mobile navigation (hamburger) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 16px 20px;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    margin-left: 12px;
+  }
+
+  nav {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 12px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 8px 20px var(--shadow);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0;
+    display: block;
+  }
+
+  .theme-toggle {
+    margin-left: 0;
+  }
 }
 
 /* Hero Section */

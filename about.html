@@ -4,25 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Amrit Tamang</title>
+  <meta name="description" content="About Amrit Tamang — graphic designer specializing in branding, packaging, and digital creatives.">
+  <meta property="og:title" content="About — Amrit Tamang">
+  <meta property="og:description" content="About Amrit Tamang — designer blending creativity with technology.">
+  <meta property="og:image" content="https://picsum.photos/id/1011/1200/800">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <header>
     <h1>Amrit Tamang</h1>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">🌙 Dark</button>
     </nav>
   </header>
 
+  <main id="main" role="main">
   <!-- About Hero Section -->
-  <section class="about-hero">
+  <section class="about-hero" role="region" aria-labelledby="about-heading">
     <div class="about-hero-content fade-in-down">
-      <img src="assets/images/profile.jpg" alt="Amrit Tamang" class="about-profile-img">
-      <h2>About Me</h2>
+      <img src="assets/images/profile.jpg" alt="Portrait of Amrit Tamang" class="about-profile-img">
+      <h2 id="about-heading">About Me</h2>
       <p class="about-intro">A passionate graphic designer blending creativity with technology to craft visually compelling stories.</p>
     </div>
   </section>
@@ -146,13 +155,15 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="cta-section" role="region" aria-labelledby="about-cta">
     <div class="cta-content fade-in-down">
-      <h2>Let's Create Something Amazing</h2>
+      <h2 id="about-cta">Let's Create Something Amazing</h2>
       <p>Ready to bring your vision to life? Let's collaborate and create designs that make an impact.</p>
       <a href="contact.html" class="cta-button">Get In Touch</a>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <p>© 2026 Amrit Tamang. All rights reserved.</p>

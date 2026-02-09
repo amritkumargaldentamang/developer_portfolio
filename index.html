@@ -4,22 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amrit Tamang | Graphic Designer</title>
+  <meta name="description" content="Amrit Tamang — graphic designer crafting bold visuals: branding, packaging, print, and web design.">
+  <meta property="og:title" content="Amrit Tamang | Graphic Designer">
+  <meta property="og:description" content="Crafting bold, creative visuals for brands and products.">
+  <meta property="og:image" content="https://picsum.photos/id/1011/1200/800">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <header>
     <h1>Amrit Tamang</h1>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">🌙 Dark</button>
     </nav>
   </header>
 
-  <section class="hero fade-in-down">
+  <main id="main" role="main">
+
+  <section class="hero fade-in-down" role="region" aria-labelledby="hero-heading">
     <h2>Graphic Designer</h2>
     <p>Crafting bold, creative visuals that speak volumes.</p>
   </section>
@@ -50,7 +60,7 @@
   </section>
 
   <section id="portfolio" class="portfolio">
-    <h3 class="fade-in-up">My Work</h3>
+    <h3 id="portfolio-heading" class="fade-in-up">My Work</h3>
     <div class="projects-grid">
       <div class="project-card fade-in-left animation-delay-1">
         <img src="https://picsum.photos/id/1011/1200/800" alt="Project 1">
@@ -72,7 +82,7 @@
   </section>
 
   <section class="services-section">
-    <h2 class="fade-in-up">My Services</h2>
+    <h2 id="services-heading" class="fade-in-up">My Services</h2>
     <div class="services-grid">
       <div class="service-card fade-in-left animation-delay-1">
         <span class="service-icon">🎨</span>
@@ -108,12 +118,14 @@
   </section>
 
   <section class="cta-section fade-in-up">
-    <div class="cta-content">
-      <h2>Ready to bring your vision to life?</h2>
+    <div class="cta-content" role="region" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Ready to bring your vision to life?</h2>
       <p>Let's collaborate on your next project and create something amazing together. Get in touch today!</p>
       <a href="contact.html" class="cta-button">Start Your Project</a>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <div class="social-links">

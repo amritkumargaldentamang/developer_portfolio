@@ -4,25 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Amrit Tamang</title>
+  <meta name="description" content="Portfolio — selected branding, packaging, print, and web design projects by Amrit Tamang.">
+  <meta property="og:title" content="Portfolio — Amrit Tamang">
+  <meta property="og:description" content="A curated collection of design projects showcasing creativity and strategy.">
+  <meta property="og:image" content="https://picsum.photos/id/1012/1200/800">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <header>
     <h1>Amrit Tamang</h1>
-    <nav>
+    <button class="menu-toggle" id="menuToggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">🌙 Dark</button>
     </nav>
   </header>
 
+  <main id="main" role="main">
   <!-- Portfolio Hero Section -->
-  <section class="portfolio-hero">
+  <section class="portfolio-hero" role="region" aria-labelledby="portfolio-hero">
     <div class="portfolio-hero-content fade-in-down">
-      <h2>My Work</h2>
+      <h2 id="portfolio-hero">My Work</h2>
       <p>A curated collection of design projects that showcase creativity, strategy, and attention to detail.</p>
     </div>
   </section>
@@ -247,13 +256,15 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="cta-section" role="region" aria-labelledby="portfolio-cta">
     <div class="cta-content fade-in-down">
-      <h2>Ready to Start Your Project?</h2>
+      <h2 id="portfolio-cta">Ready to Start Your Project?</h2>
       <p>Let's collaborate and bring your vision to life with creative, impactful design.</p>
       <a href="contact.html" class="cta-button">Get In Touch</a>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <p>© 2026 Amrit Tamang. All rights reserved.</p>

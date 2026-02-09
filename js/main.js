@@ -7,7 +7,10 @@
 // -------- Theme handling (shared across pages) --------
 function updateThemeButtons(theme) {
   document.querySelectorAll('.theme-toggle').forEach(btn => {
+    // Update visible label for sighted users
     btn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    // Update aria-pressed for assistive tech (true when dark theme is active)
+    btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
   });
 }
 
@@ -26,6 +29,10 @@ function initializeTheme() {
 // Attach toggle listeners to any .theme-toggle buttons
 function setupThemeToggles() {
   document.querySelectorAll('.theme-toggle').forEach(btn => {
+    // Ensure initial aria-pressed state reflects current theme
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.setAttribute('aria-pressed', currentTheme === 'dark' ? 'true' : 'false');
+
     btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'light';
       applyTheme(current === 'light' ? 'dark' : 'light');
@@ -38,6 +45,46 @@ function setupThemeToggles() {
       if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
     });
   }
+}
+
+// -------- Skip-link behavior --------
+// When a skip-link is activated, move focus to the target main element.
+function setupSkipLinks() {
+  document.querySelectorAll('.skip-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // href is like '#main'
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const id = href.slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        // Make target focusable, move focus, then remove tabindex later
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+        window.setTimeout(() => { target.removeAttribute('tabindex'); }, 1000);
+      }
+    });
+  });
+}
+
+// -------- Mobile menu toggle --------
+function setupMenuToggle() {
+  const menuBtn = document.getElementById('menuToggle');
+  const nav = document.getElementById('primary-nav');
+  if (!menuBtn || !nav) return;
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu when resizing to large screens
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // -------- Scroll animations & counters --------
@@ -193,4 +240,6 @@ function setupContactForm() {
   setupAnimationObserver();
   setupPortfolioFilter();
   setupContactForm();
+  setupSkipLinks();
+  setupMenuToggle();
 })();
